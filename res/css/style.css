@@ -1,0 +1,33 @@
+#cookie {
+    max-width: 250px;
+    width: 100%;
+    border-radius: 25px;
+    transition:0.7s ease;
+    cursor: pointer;
+}
+#cookie:hover{
+    max-width: 350px;
+    width: 100%;
+    border-radius: 25px;
+    transition:0.7s ease;
+}
+#counter{
+font-size: xx-large;
+text-align: center;
+background-color: aliceblue;
+border-radius: 25px;
+border: solid black 2px;
+width: 100%;
+}
+.stred{
+    display: flex;
+    justify-content: space-evenly;
+}
+.suse{
+    border-radius: 25px;
+border: solid black 2px;
+}
+body{
+    background-color: blue;
+    padding-top: 16px;
+}
