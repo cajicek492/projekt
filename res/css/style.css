@@ -44,3 +44,12 @@ body{
     cursor: pointer;
     transition:0.7s ease;
 }
+#autoClicker{
+    font-size: 30px;
+    border-radius: 24px;
+    cursor: pointer;
+    transition:0.7s ease;
+}
+#autoClicker:hover{
+    font-size: 40px;
+}
