@@ -2,13 +2,17 @@ const cookie = document.getElementById("cookie");
 const counter = document.getElementById("counter");
 const clickUpgrade = document.getElementById("clickUpgrade");
 const autoClicker = document.getElementById("autoClicker");
+const grandMa = document.getElementById("grandMa");
 
 let numberOfCookies = 0;
 let costOfClickUpgrade = 20;
 let clickUpgradeIncrease = 1;
 let autoClickIncrease = 0;
 let autoClickerI;
-let autoClickerCost = 100;
+let autoClickerCost = 10;
+let grandMaCost = 100;
+let grandMaI;
+let grandMaIncrease = 0;
 
 autoClicker.onclick = () => {
     if (numberOfCookies>= autoClickerCost) {
@@ -18,7 +22,7 @@ autoClicker.onclick = () => {
         autoClicker.innerText = "Buy autoclicker: " + autoClickerCost;
         //akutalizovat susenky
         counter.innerHTML = "sike Cats: " + numberOfCookies;
-        autoClickIncrease++;
+        autoClickIncrease += 1;
         //clear
         clearInterval(autoClickerI);
         //spustit interval
@@ -28,6 +32,21 @@ autoClicker.onclick = () => {
             //aktualizovat odstavec
             counter.innerHTML = "sike Cats: " + numberOfCookies;
         }, 1000);
+    }
+}
+
+grandMa.onclick = () => {
+    if(numberOfCookies >= grandMaCost){
+        numberOfCookies -= grandMaCost;
+        grandMaCost *= 2;
+        grandMa.innerText = "Buy Grany: " + grandMaCost;
+        counter.innerHTML = "sike Cats: " + numberOfCookies;
+        grandMaIncrease += 1;
+        clearInterval(grandMaI);
+        grandMaI = setInterval(() => {
+            numberOfCookies += grandMaIncrease;
+            counter.innerHTML = "sike Cats: " + numberOfCookies;
+        },1000);
     }
 }
 
